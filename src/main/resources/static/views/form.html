@@ -1,0 +1,58 @@
+<div class="wrapper center-block" ng-controller="MercadoriaFormCtrl">
+  <section role="main" class="scroll-container">
+    <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
+    <h2 ng-if="$state.current.name === 'base.create'">Mercadorias <small>Incluir</small></h2>
+    <h2 ng-if="$state.current.name === 'base.update'">Mercadorias <small>Atualizar</small></h2>
+    
+    <form class="form-horizontal" name="formMercadoria">
+      <div class="form-group">
+        <label for="nome" class="col-sm-2 control-label">Nome *</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" name="nome" 
+              placeholder="Nome da mercadoria" ng-model="mercadoria.nome"
+              required />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="descricao" class="col-sm-2 control-label">Descrição</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" name="descricao" 
+              placeholder="Descrição da mercadoria" ng-model="mercadoria.descricao" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="categoria" class="col-sm-2 control-label">Categoria *</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" name="categoria"
+              placeholder="Categoria da mercadoria" ng-model="mercadoria.categoria" 
+              required="true" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="quantidade" class="col-sm-2 control-label">Quantidade *</label>
+        <div class="col-sm-2">
+          <input type="text" class="form-control" name="quantidade"
+              placeholder="Quantidade" ng-model="mercadoria.quantidade"
+              required />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="preco" class="col-sm-2 control-label">Preço *</label>
+        <div class="col-sm-2">
+          <input type="text" class="form-control" name="preco" 
+              placeholder="Preço" ng-model="mercadoria.preco" 
+              required />
+        </div>
+      </div>
+      
+      <div class="col-md-offset-2">
+        <button type="button" class="btn btn-lg btn-success" ng-click="save()"
+            ng-disabled="formMercadoria.nome.$invalid || formMercadoria.categoria.$invalid 
+          || formMercadoria.quantidade.$invalid || formMercadoria.preco.$invalid">Salvar</button>
+        <button type="button" class="btn btn-default btn-lg" ui-sref="base.list">Cancelar</button>
+        <button type="button" class="btn btn-lg btn-danger" ng-click="remove()"
+            ng-disabled="!mercadoria.id">Excluir</button>
+      </div>
+    </form>
+  </section>
+</div>

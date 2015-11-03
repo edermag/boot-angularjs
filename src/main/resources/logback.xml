@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  
+  <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+    <layout>
+      <pattern>
+        %d [%thread] %-5level %logger{40} %X{key} - %msg%n
+      </pattern>
+    </layout>
+  </appender>
+  
+  <logger name="br.com.yaw" level="debug">
+    <appender-ref ref="CONSOLE"/>
+  </logger>
+  
+  <root level="ERROR">
+    <appender-ref ref="CONSOLE"/>
+  </root>
+  
+</configuration>

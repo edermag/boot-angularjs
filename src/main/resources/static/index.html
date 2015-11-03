@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="bootAngular">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>YaW - Demonstração Spring Boot e AngularJS</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css"/>
+</head>
+
+<body>
+
+<div ui-view="header"></div>
+
+<div class="container">
+  <script type="text/ng-template" id="alert.html">
+    <div class="alert" style="background-color:#fa39c3;color:white" role="alert">
+      <div ng-transclude></div>
+    </div>
+  </script>
+  
+  <div ui-view></div>
+</div>
+
+<script type="text/javascript" src="lib/angular/angular.js"></script>
+<script type="text/javascript" src="lib/angular-ui-router/angular-ui-router.min.js"></script>
+<script type="text/javascript" src="lib/angular-ui-bootstrap/ui-bootstrap-tpls-0.13.1.min.js"></script>
+
+<script type="text/javascript" src="lib/jquery/js/jquery.min.js"></script>
+<script type="text/javascript" src="lib/jquery-ui/js/jquery-ui.min.js"></script>
+
+<script type="text/javascript" src="app/mercadoria/mercadoria.module.js"></script>
+<script type="text/javascript" src="app/mercadoria/mercadoria.service.js"></script>
+<script type="text/javascript" src="app/mercadoria/list.controller.js"></script>
+<script type="text/javascript" src="app/mercadoria/form.controller.js"></script>
+
+
+<script type="text/javascript" src="app/app.js"></script>
+
+</body>
+</html>
